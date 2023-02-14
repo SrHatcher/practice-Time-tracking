@@ -47,21 +47,138 @@ html{
 }
 
 body{
+    display: flex;
+    justify-content: center;
+
+    padding: 6rem 1.5rem;
+
     font-size: 1.8rem;
     font-family: var(--font);
+
+    background-color: var(--very-dark-blue);
+    color: white;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    width: 32.5rem;
 }
 
-.main__owner{}
-.owner__profile{}
-.profile__image{}
-.profile__text{}
-.owner__timeline{}
-.main__report{}
-.report__container{}
-.report__content{}
-.content__header{}
-#content-title{}
-.content__options{}
-.content__description{}
-#content-time{}
-#content-timeline{}
+.main__owner{
+    height: 20rem;
+
+    border-radius: 1rem;
+    background-color: var(--darkblue);
+}
+.owner__profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    height: 13.5rem;
+
+    border-radius: 1rem;
+    background-color: var(--blue);
+}
+.profile__image{
+    width: 7rem;
+    height: 7rem;
+
+    border-radius: 50%;
+    border: solid 0.2rem white;
+    background-image: url('../images/image-jeremy.png');
+    background-size: 7rem 7rem;
+}
+.profile__text p{
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+.profile__text span{
+    font-weight: 400;
+    font-size: 2.4rem;
+}
+.owner__timeline{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 6.5rem;
+
+    font-weight: 300;
+
+    color: var(--desaturated-blue);
+}
+.owner__timeline span{
+    cursor: pointer;
+}
+.timeline--active{
+    font-weight: 400;
+
+    color: white;
+}
+
+.main__report{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.report__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    height: 16.5rem;
+
+    background-image: url('../images/icon-work.svg');
+    background-repeat: no-repeat;
+    background-position: top -1rem right 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--work);
+}
+.report__content{
+    height: 12.5rem;
+    padding: 2rem 2rem;
+
+    border-radius: 0.8rem;
+    background-color: var(--darkblue);
+}
+.content__header{
+    display: flex;
+    justify-content: space-between;
+}
+#content-title{
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+.content__options{
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+
+    cursor: pointer;
+}
+.content__description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#content-time{
+    font-weight: 300;
+    font-size: 3.4rem;
+}
+#content-timeline{
+    font-weight: 300;
+    font-size: 1.6rem;
+
+    color: var(--pale-blue);
+}
+
+@media (hover:hover){
+    .owner__timeline span:hover{
+        font-weight: 400;
+
+        color: white;
+    }
+}
