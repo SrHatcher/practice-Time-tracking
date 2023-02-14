@@ -144,6 +144,7 @@ main{
 
     border-radius: 0.8rem;
     background-color: var(--darkblue);
+    cursor: pointer;
 }
 .content__header{
     display: flex;
@@ -157,6 +158,7 @@ main{
     font-weight: 500;
     letter-spacing: 0.2rem;
 
+    color: var(--pale-blue);
     cursor: pointer;
 }
 .content__description{
@@ -175,10 +177,97 @@ main{
     color: var(--pale-blue);
 }
 
+@media screen and (min-width: 1000px){
+    body{
+        align-items: center;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 3rem;
+    
+        width: 110rem;
+        height: 53rem;
+    }
+
+    .main__owner{
+        height: 100%;
+    
+        border-radius: 1rem;
+        background-color: var(--darkblue);
+    }
+    .owner__profile{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: unset;
+        gap: 3rem;
+    
+        padding: 3rem 3rem;
+        height: 36rem;
+    
+        border-radius: 1rem;
+        background-color: var(--blue);
+    }
+    .profile__text span{
+        font-weight: 400;
+        font-size: 4rem;
+    }
+    .owner__timeline{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    
+        height: 16.5rem;
+
+        padding: 1rem 3rem;
+    
+        font-weight: 300;
+    
+        color: var(--desaturated-blue);
+    }
+    .main__report{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 3rem;
+    }
+    .report__container{
+        height: 100%;
+    }
+    .report__content{
+        height: 20rem;
+        padding: 3rem 2.5rem;
+    }
+    .content__header{
+        display: flex;
+        justify-content: space-between;
+
+        margin-block-end: 1rem;
+    }
+    .content__description{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #content-time{
+        font-size: 5rem;
+    }
+}
+
 @media (hover:hover){
     .owner__timeline span:hover{
         font-weight: 400;
 
         color: white;
+    }
+
+    .content__options:hover{
+        color: white;
+    }
+    .report__content:active{
+        background-color: var(--desaturated-blue);
     }
 }
