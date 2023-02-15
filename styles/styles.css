@@ -259,6 +259,28 @@ main{
     }
 }
 
+.report__loading_skeleton{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    height: 25rem;
+
+    border-radius: 1rem;
+    background-color: var(--darkblue);
+
+    animation: loading-skeleton infinite 1.5s;
+}
+
+@keyframes loading-skeleton {
+    20%, 100%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 0%;
+    }
+}
+
 @media (hover:hover){
     .owner__timeline button:hover{
         font-weight: 400;
