@@ -1,3 +1,7 @@
+const dailyButton = document.getElementById('daily');
+const weeklyButton = document.getElementById('weekly');
+const monthlyButton = document.getElementById('monthly');
+
 async function loadData(time){
     const request = await fetch('data.json');
     const reports = await request.json();
@@ -27,16 +31,15 @@ async function loadData(time){
         contentTime.setAttribute('id', 'content-time');
         contentTimeline.setAttribute('id', 'content-timeline');
 
-        if(time==='w'){
-            contentTitle.innerText = report.title;
-            contentOptions.innerText = '...'
-            contentTime.innerText = `${report.timeframes.weekly.current}hrs`
-            contentTimeline.innerText = `Last Week - ${report.timeframes.weekly.previous}hrs`;
-        }else if(time === 'm'){
-            //TODO:
-        }else{
-            //TODO:
-        }
+        let word = time.charAt().toUpperCase() + time.slice(1, (time.length -2))
+        word.charAt(0) === 'D' ? word = 'Day' : null;
+
+        contentTitle.innerText = report.title;
+        contentOptions.innerText = '...'
+        contentTime.innerText = `${report.timeframes[time].current}hrs`
+        contentTimeline.innerText = `Last ${word} - ${report.timeframes[time].previous}hrs`;
+        reportContainer.style.backgroundImage = `url('${report.image}')`;
+        reportContainer.style.backgroundColor = report.color;
 
         contentHeader.append(contentTitle, contentOptions)
         contentDescription.append(contentTime, contentTimeline)
@@ -47,4 +50,18 @@ async function loadData(time){
     })
 }
 
-loadData('w')
+dailyButton.onclick = (e)=>{changeTimeline(e)}
+weeklyButton.onclick = (e)=>{changeTimeline(e)}
+monthlyButton.onclick = (e)=>{changeTimeline(e)}
+
+function changeTimeline(event){
+    dailyButton.classList.toggle('timeline--active', false);
+    weeklyButton.classList.toggle('timeline--active', false);
+    monthlyButton.classList.toggle('timeline--active', false);
+
+    event.target.classList.toggle('timeline--active', true);
+    
+    loadData(event.target.textContent.toLowerCase())
+}
+
+loadData('weekly')

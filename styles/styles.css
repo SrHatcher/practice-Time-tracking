@@ -109,15 +109,17 @@ main{
 
     font-weight: 300;
 
-    color: var(--desaturated-blue);
 }
-.owner__timeline span{
+.owner__timeline button{
+    color: var(--desaturated-blue);
+    background-color: transparent;
+    border: none;
     cursor: pointer;
 }
 .timeline--active{
     font-weight: 400;
 
-    color: white;
+    color: white !important;
 }
 
 .main__report{
@@ -258,7 +260,7 @@ main{
 }
 
 @media (hover:hover){
-    .owner__timeline span:hover{
+    .owner__timeline button:hover{
         font-weight: 400;
 
         color: white;
