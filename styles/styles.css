@@ -95,6 +95,8 @@ main{
 .profile__text p{
     font-weight: 300;
     font-size: 1.8rem;
+
+    color: var(--pale-blue);
 }
 .profile__text span{
     font-weight: 400;
@@ -152,7 +154,7 @@ main{
     display: flex;
     justify-content: space-between;
 }
-#content-title{
+.content__title{
     font-weight: 500;
     font-size: 1.8rem;
 }
@@ -168,11 +170,11 @@ main{
     justify-content: space-between;
     align-items: center;
 }
-#content-time{
+.content__time{
     font-weight: 300;
-    font-size: 3.4rem;
+    font-size: 5rem;
 }
-#content-timeline{
+.content__timeline{
     font-weight: 300;
     font-size: 1.6rem;
 
@@ -213,7 +215,8 @@ main{
         background-color: var(--blue);
     }
     .profile__text span{
-        font-weight: 400;
+        line-height: 4.5rem;
+        font-weight: 300;
         font-size: 4rem;
     }
     .owner__timeline{

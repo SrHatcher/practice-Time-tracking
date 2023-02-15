@@ -26,10 +26,10 @@ async function loadData(time){
         contentHeader.classList.add('content__header');
         contentDescription.classList.add('content__description')
 
-        contentTitle.setAttribute('id', 'content-title');
+        contentTitle.classList.add('content__title');
         contentOptions.classList.add('content__options');
-        contentTime.setAttribute('id', 'content-time');
-        contentTimeline.setAttribute('id', 'content-timeline');
+        contentTime.classList.add('content__time');
+        contentTimeline.classList.add('content__timeline');
 
         let word = time.charAt().toUpperCase() + time.slice(1, (time.length -2))
         word.charAt(0) === 'D' ? word = 'Day' : null;
@@ -60,7 +60,7 @@ function changeTimeline(event){
     monthlyButton.classList.toggle('timeline--active', false);
 
     event.target.classList.toggle('timeline--active', true);
-    
+
     loadData(event.target.textContent.toLowerCase())
 }
 
